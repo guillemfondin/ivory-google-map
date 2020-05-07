@@ -149,7 +149,7 @@ class ApiRenderer extends AbstractRenderer
 
         return $formatter->renderLines([
             $this->loaderRenderer->render($loadCallback, $initCallback, $libraries, false),
-            $this->sourceRenderer->render($initSourceCallback, null, null, false),
+//            $this->sourceRenderer->render($initSourceCallback, null, null, false),
             $this->requirementLoaderRenderer->render($initRequirementCallback, null, null, null, 100, false),
             $this->apiInitRenderer->render(
                 $initCallback,
@@ -160,9 +160,9 @@ class ApiRenderer extends AbstractRenderer
                 $initRequirementCallback,
                 false
             ),
-            $formatter->renderCall($initSourceCallback, [
-                $formatter->renderEscape($this->loaderRenderer->renderSource($loadCallback)),
-            ], true),
+//            $formatter->renderCall($initSourceCallback, [
+//                $formatter->renderEscape($this->loaderRenderer->renderSource($loadCallback)),
+//            ], true),
         ], true, false);
     }
 
