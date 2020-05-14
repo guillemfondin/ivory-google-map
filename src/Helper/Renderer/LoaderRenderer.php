@@ -114,11 +114,15 @@ class LoaderRenderer extends AbstractJsonRenderer
             ->setValue('[other_params]', urldecode(http_build_query($parameters, '', '&')))
             ->setValue('[callback]', $callback, false);
 
-        return $formatter->renderCall($formatter->renderProperty('google', 'load'), [
-            $formatter->renderEscape('maps'),
-            $formatter->renderEscape('3'),
-            $jsonBuilder->build(),
-        ]);
+        return $formatter->renderCall(
+            $formatter->renderProperty('google', 'load'),
+            [
+                $formatter->renderEscape('maps'),
+                $formatter->renderEscape('3'),
+                $jsonBuilder->build(),
+            ],
+            true
+        );
     }
 
     /**
